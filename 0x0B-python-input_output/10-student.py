@@ -17,7 +17,13 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """Retrieves a dictionary representation of a Student instance"""
+        """Retrieves a dictionary representation of a Student instance
+
+        Args:
+            attrs (list): Attributes to represent
+
+        Returns: The object dictionary
+        """
         obj_dict = self.__dict__
         if not attrs:
             return obj_dict
