@@ -1,0 +1,84 @@
+========================
+The ``1-my_list`` module
+========================
+
+
+-------------------------------------------------------------
+Using the ``print_sorted`` function
+
+Usage: print_sorted(list)
+
+- where list is a python list to be sorted in ascending order
+-------------------------------------------------------------
+
+==========
+==========
+The module is first imported:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+==========
+An instance of MyList is then created
+
+   >>> my_list = MyList()
+
+==========
+Since my_list inherits from the class list, an empty list is returned when an
+instance is first created
+
+	 >>> print(my_list)
+	 []
+
+==========
+Since my_list inherits from the class list, it uses list methods to create a
+list:
+
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+==========
+Using the print_sorted method, without arguments, a list sorted in ascending
+order is printed:
+
+      >>> my_list.print_sorted()
+      [1, 2, 3, 4, 5]
+
+==========
+The original list is not altered:
+
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+==========
+A new instance is then created
+
+  >>> my_list1 = MyList()
+
+==========
+Creating a new list with negative integers still returns a sorted list:
+	 >>> my_list1.append(1)
+	 >>> my_list1.append(5)
+	 >>> my_list1.append(-3)
+	 >>> my_list1.append(0)
+	 >>> my_list1.append(11)
+	 >>> my_list1.append(-5)
+	 >>> my_list1.append(5)
+	 >>> my_list1.append(4)
+	 >>> print(my_list1)
+	 [1, 5, -3, 0, 11, -5, 5, 4]
+
+	 >>> my_list1.print_sorted()
+	 [-5, -3, 0, 1, 4, 5, 5, 11]
+
+==========
+The original list is still unsorted:
+
+    >>> print(my_list1)
+    [1, 5, -3, 0, 11, -5, 5, 4]
+
+==========
