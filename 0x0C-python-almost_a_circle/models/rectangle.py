@@ -13,8 +13,8 @@ class Rectangle(Base):
         Args:
             width: The width of the rectangle
             height: The height of the rectangle
-            x: Horizontal coordinate of the rectangle
-            y: Verticle rectangle coordinate
+            x: Horizontal offset of the rectangle
+            y: Vertical offset of the rectangle
         """
         self.width = width
         self.height = height
@@ -34,6 +34,10 @@ class Rectangle(Base):
         Args:
             value: The value of the width
         """
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -48,6 +52,10 @@ class Rectangle(Base):
         Args:
             value: The value of the height
         """
+        if type(value) is not int:
+            raise TypeError("height must be an integer")
+        if value <= 0:
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -62,6 +70,10 @@ class Rectangle(Base):
         Args:
             value: The value of the x coordinate
         """
+        if type(value) is not int:
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -76,4 +88,19 @@ class Rectangle(Base):
         Args:
             value: The value of the y coordinate of the rectangle
         """
+        if type(value) is not int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """Returns the area of the rectangle"""
+        return self.__width * self.__height
+
+    def display(self):
+        """Prints the rectangle instance with the # character to stdout"""
+        for i in range(0, self.__height):
+            for j in range(0, self.__width):
+                print("#", end="")
+            print()
