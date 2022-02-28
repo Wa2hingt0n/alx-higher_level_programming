@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 const myIterator = parseInt(process.argv[2], 10);
 if (isNaN(myIterator)) {
   console.log('Missing number of occurrences');
