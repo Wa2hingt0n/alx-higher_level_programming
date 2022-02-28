@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let myString = process.argv[2] + ' is ' + process.argv[3];
+const myString = process.argv[2] + ' is ' + process.argv[3];
 
 if (!(process.argv[2])) {
   process.argv[2] = 'undefined';
