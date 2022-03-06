@@ -20,7 +20,8 @@ if __name__ == "__main__":
 
     query_row = cur.fetchall()
     for row in query_row:
-        print(row)
+        if row[1] == sys.argv[4]:
+            print(row)
 
     cur.close()
     conn.close()
