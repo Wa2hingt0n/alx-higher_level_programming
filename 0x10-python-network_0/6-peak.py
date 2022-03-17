@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Defines a function find_peak """
+
+
 def find_peak(list_of_integers):
     """ Returns the peak element in an unsorted list of integers """
     if list_of_integers == []:
