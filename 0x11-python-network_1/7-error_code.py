@@ -12,4 +12,4 @@ if __name__ == "__main__":
         print("Error code: {}".format(code))
     else:
         content = r.text
-        print(content, end="")
+        print(content)
